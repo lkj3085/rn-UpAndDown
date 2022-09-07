@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import Colors from "../../constants/colors";
+
+const width = Dimensions.get("window").width;
 
 export default function Card({ children }) {
   return <View style={styles.inputContainer}>{children}</View>;
@@ -10,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 16, //여백
-    marginTop: 36, //바깥 여백
+    marginTop: width < 380 ? 18 : 36, //바깥 여백
     marginHorizontal: 24, // 양옆간격
     borderRadius: 8,
     backgroundColor: Colors.primary800,
